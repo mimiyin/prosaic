@@ -1,0 +1,113 @@
+{% extends "words/base.html" %}
+{% block js %}
+		<script type=text/javascript src="{{STATIC_URL}}js/animate.js"></script>	  
+		<script type=text/javascript src="{{STATIC_URL}}js/scroll.js"></script>	  
+		<script type=text/javascript src="{{STATIC_URL}}js/queue.js"></script>	  
+{% endblock %}
+
+{% block title %}{% endblock %}
+{% block header %}{% endblock %}
+
+
+
+{% block body %}
+
+<div id=controls>
+	<div id=label>peek under the hood</div>
+	<div id=0 class='control off'>repeat</div>
+	<div id=1 class='control off'>remix</div>
+	<div id=2 class='control off'>stutter</div>
+	<div id=3 class='control off'>elide</div>
+	<div id=4 class='control off'>synonymize</div>
+	<div id=5 class='control off'>alliterate</div>
+	<div id=6 class='control off'>rhyme</div>
+</div>
+<script type=text/javascript>
+	// On reload, tell the server to kill all controls
+	queueWrapper('controls', updateControls, [0,0,0,0,0,0,0]);
+	var open = false;
+	
+	function updateControls(data) {
+		$(".control").each(function(idx){
+			if (data[idx] > 0) {
+				console.log("SOMETHING IS ON!!!");
+				if(!open) {
+					openControls($("#controls"));
+					initHood();
+				}
+				$(this).toggleClass('on');
+				}
+			});
+	}
+	
+	$("#controls").click(function(){
+		hood = !hood;
+		
+		// Closing the hood, turns off all controls
+		// Send new control status to the server
+		if(!hood) {
+			$(".control").each(function(i, sendControls){
+				$(this).removeClass('on');
+				$(this).addClass('off');
+				});
+			}
+		
+		if(!open) openControls($(this));
+		else closeControls($(this));
+	});
+	
+	$(".control").each(function(i){
+		$(this).click(function(e){
+			e.stopPropagation();
+			$(this).toggleClass('on');			
+			var controls = {}
+			sendControls();
+			});
+		});
+	
+	function openControls(elem){
+		console.log("OPEN SESAME");
+		console.log(elem);
+		elem.animate({
+			right: 0,
+		},1000);
+		open = true;
+	}
+	
+	function closeControls(elem){
+		elem.animate({
+			right: -110,
+		},1000);
+		open = false;
+	}
+	
+	function sendControls() {
+		$(".control").each(function(idx){
+
+			if ($(this).hasClass('on')) {
+				controls[idx] = 1;	
+				}
+			else controls[idx] = 0;
+			});
+		hood = false;
+		$.each(controls, function(c, control){
+			if (control > 0) hood = true;			
+			});
+		
+		initHood();
+		
+		queueWrapper('controls', function(){ console.log("SENT!")}, controls);
+	}
+	
+	function initHood() {
+		queue.reInit();
+		if(hood) {
+			queue.getData(false);
+		}
+		else queue.getData(true);
+	}
+	queue.getData(true);
+</script>
+
+{% endblock %}
+

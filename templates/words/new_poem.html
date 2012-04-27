@@ -1,0 +1,14 @@
+{% extends "words/base.html" %}
+{% block title %}Tune New Poem{% endblock %}
+
+
+{% block header %}New Poem{% endblock %}
+	
+{% block body %}
+
+	  	<form action="{% url new_poem %}" method="post">
+		    {{	form.non_field_errors	}}
+		    {{	form.as_p	}}
+	    	<input type="submit" value="Send" id="sendbutton"/>
+	  	</form>
+{% endblock %}

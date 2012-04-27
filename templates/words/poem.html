@@ -1,0 +1,19 @@
+{% extends "words/base.html" %}
+
+{% block title %}Just Words{% endblock %}
+
+{% block header %}Just Words{% endblock %}
+
+{% block body %}
+<script type=text/javascript>
+	$.ajax({
+		  url: "http://prosaic.com:8000/words/smore_please/",
+		  success: function(data){
+		    console.log("DONE");
+		    console.log(data);
+		  }
+		});
+</script>
+{{ words }}
+
+{% endblock body%}
