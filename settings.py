@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/capps/webapps/django_prosaic/prosaic2/sqlite.db',                      # Or path to database file if using sqlite3.
+        'NAME': '/home/capps/webapps/django_prosaic/prosaic/sqlite.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -45,7 +45,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/home/capps/webapps/django_prosaic/prosaic2/media/'
+MEDIA_ROOT = '/home/capps/webapps/django_prosaic/prosaic/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -110,10 +110,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'prosaic2.urls'
+ROOT_URLCONF = 'prosaic.urls'
 
 TEMPLATE_DIRS = (
-    '/home/capps/webapps/django_prosaic/prosaic2/templates'
+    '/home/capps/webapps/django_prosaic/prosaic/templates'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -127,8 +127,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'prosaic2',
-    'prosaic2.words',
+    'prosaic',
+    'prosaic.words',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -162,6 +162,7 @@ LOGGING = {
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': 'unix:</home/capps/memcached.sock>'
+        #'LOCATION': 'unix:</home/capps/memcached.sock>',
+        'LOCATION': '127.0.0.1:11211'
     }
 }

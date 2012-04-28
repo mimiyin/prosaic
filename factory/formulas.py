@@ -16,13 +16,12 @@ import voices
 
 import queue
 from django.core.cache import cache
-import json
 
 
 def get_input():        
     try:
         user_input = raw_input("Enter a word or a phrase: ")
-        form = Formula(user_input)
+        Formula(user_input)
     except KeyboardInterrupt:
         print '\nInput Error'
         return
