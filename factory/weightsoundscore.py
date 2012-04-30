@@ -50,22 +50,32 @@ def rescore_it(form, scores, weighted=True):
     print "Score-it Values: " + str(values) 
     
     ''' Apply weights to each sound score '''
-    for scoresies in scores:
+    for idx, scoresies in enumerate(scores):
         total_score = 0
-        for sdx, score in enumerate(scoresies):
-            if sdx > 1:
-                if weighted:
-                    scoresies[sdx] = weight_it(sdx, score, values)
-                total_score += scoresies[sdx] 
-        if total_score > 0:
-            total_score += math.log(scoresies[1])        
-        scoresies.insert(1, int(total_score))
+        
+        if weighted:
+            for sdx, score in enumerate(scoresies):
+                if sdx > 0:
+                    total_score += weight_it(sdx, score, values)
+        else:
+            total_score = scoresies[3] 
+            if total_score > 0:
+                # Add freq score
+                total_score += weight_it(1, scoresies[1], values)
+                # Add syllable score
+                total_score += weight_it(2, scoresies[2], values) 
+                       
+        scores[idx].insert(1, int(total_score))
     return scores
     
 def weight_it(sdx, score, values):
-    if sdx == 2: weighted_score = score*(values[0] + 100)  # Stutter / Alliteration or Rhyming
-    elif sdx == 3: weighted_score = score*(values[1] + 100) # Scramble
-        
+    if sdx == 3: weighted_score = score*(values[1] + 100)     # Stutter / Alliteration or Rhyming
+    elif sdx == 4: weighted_score = score*(values[2] + 100)   # Scramble
+    elif sdx == 2: 
+        if score == 0: score = 1
+        weighted_score = (1/score)*values[0]         # Syllable count
+    elif sdx == 1: weighted_score = math.log(score)           # Freqency score
+    
     return weighted_score
         
 def sort_scores(scores):

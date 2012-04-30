@@ -6,6 +6,7 @@ def wordscore_it(parsed_input, parsed_reference, mode=0):
     
     # Load parsed input into variables that are easier to work with
     input_grams = parsed_input[0]               # word index
+    input_sylls = parsed_input[5]
     
     # Account for words being ints and phrases being tuples
     if mode == 0: parser_func = words_parser
@@ -16,7 +17,12 @@ def wordscore_it(parsed_input, parsed_reference, mode=0):
         # Load variables for parsed comparison word into variables that are easier to work with
         compare_idx = parser_func(idx=idx, item=item)
         compare_freq = item[1]
+        compare_sylls = item[5]
+        
         score = [compare_idx, compare_freq]
+        
+        # Points for difference in syllable count
+        score.append(count(input_sylls, compare_sylls))
         
         # Points for having parallel grams    
         score.append(parallel(input_grams, compare_idx))
@@ -34,7 +40,7 @@ def soundscore_it(parsed_input, parsed_reference, ar=0, mode=1):
     # input_freq = parsed_input[1]
     input_phs = parsed_input[2]                 # phs
     input_reverse = parsed_input[3]             # reverse phs
-    input_stresses = parsed_input[4]            # stresses
+    #input_stresses = parsed_input[4]            # stresses
     input_sylls = parsed_input[5]               # sylls
 #    try: input_total_grams = len(input)         # total word count
 #    except: input_total_grams = 1
@@ -52,8 +58,11 @@ def soundscore_it(parsed_input, parsed_reference, ar=0, mode=1):
         compare_phs = item[2]
         compare_reverse = item[3]
         #compare_stresses = item[4]
-        #compare_sylls = item[5]
+        compare_sylls = item[5]
         #compare_total_grams = len(compare_idx)
+
+        # Points for difference in syllable count
+        score.append(count(input_sylls, compare_sylls))
                     
         # Alliteration
         if ar == 0: score.append(chain(input_phs, compare_phs))
@@ -64,8 +73,6 @@ def soundscore_it(parsed_input, parsed_reference, ar=0, mode=1):
         # Points for having parallel stresses    
         #score.append(parallel(input_stresses, compare_stresses)) 
         
-        # Points for difference in syllable count
-        #score.append(count(input_sylls, compare_sylls))
 
         # Points for having parallel phonemes    
         #score.append(parallel(input_phs, compare_phs))
@@ -75,6 +82,7 @@ def soundscore_it(parsed_input, parsed_reference, ar=0, mode=1):
 
         # Points for difference in word count
         #score.append(count(input_total_grams, compare_total_grams))
+
         
         scores.append(score) 
     return scores
@@ -87,7 +95,7 @@ def phrases_parser(idx = 0, item = []):
 
 # Subtract points for difference in syllable count
 def count(anchor, compare):
-    score = abs(compare - anchor)
+    score = compare - anchor
     return score
 
 # Points for having parallel matching whatever 

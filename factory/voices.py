@@ -39,8 +39,12 @@ class Voice:
         # Create Sub-Waves
         # Remix/Repeat: Up to 10
         if self.mode_idx == 0 or self.mode_idx == 1: cap = 10
-        # Elision, Stutter: 2 options
-        elif self.mode_idx == 2 or self.mode_idx == 3 : cap = 2
+        # Stutter: 3 options
+        elif self.mode_idx == 2: cap =3
+        # Elision: 2 options
+        elif self.mode_idx == 3 : cap = 2
+        # Allit/Rhyme: 1 option
+        elif self.mode_idx >= 5: cap = 1
         # Synonymize does not have cap
         else: cap = 0
         

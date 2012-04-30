@@ -49,7 +49,7 @@ class Formula:
         self.voice_num_ranges = die.roll_die(5)
         print "Num of Voices: " + str(self.voice_num_ranges)
         
-        self.mode_ranges = die.build_range_from_values([1, 6, 5, 4, 3, 3, 3]) #die.roll_die(7) 
+        self.mode_ranges = die.build_range_from_values([1, 5, 6, 4, 2, 3, 4]) #die.roll_die(7) 
         print "Modes: " + str(self.mode_ranges)
 
         self.wave_ranges = die.build_range_from_values([2, 1, 1, 2]) #die.roll_die(4)        
@@ -204,7 +204,7 @@ class Formula:
         #print options        
         
         # Sound Parsing
-        if self.winner >= 5: self.parse_rhymes(options, self.cap_it(options)) #self.cap_it(options)) 
+        if self.winner >= 5: self.parse_rhymes(options, len(options)) #self.cap_it(options)) 
         else:
             # Build synonym phrase
             if self.winner == 4:
@@ -227,12 +227,10 @@ class Formula:
         
 
     def parse_rhymes(self, options, cap):
-        ceiling = int(cap*random.random())
-        if ceiling < 1: ceiling = 1
-        if ceiling > 7: ceiling = 7
-        for i in range(ceiling):
-                self.output = options[i]
-                self.print_it()
+        for i in range(cap):
+                if i % 3 == int(random.random()*cap):
+                    self.output = options[i]
+                    self.print_it()
             
     def cap_it(self, options):
         ''' Play with this range to control circularity of poem '''
