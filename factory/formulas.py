@@ -278,8 +278,15 @@ class Formula:
         self.output_str = self.get_str()
         if self.winner < 2 or self.winner == 4: self.clip_it()
         
+        if len(self.output) > 3:
+            for stopword in ['in a', 'of a', 'on a', 'in the', 'of the', 'on the', 'a', 'the', 'that', 'of', 'in']:
+                if re.search(stopword+'$' , self.output_str): 
+                    print "FOUND STOPWORD"
+                    self.output_str = self.output_str[:-len(stopword)]
+                    break
+        
         print "\n"                
-        print "OUTPUT:" + self.output_str.upper()                        
+        print "OUTPUT: " + self.output_str.upper()                        
         print "\n\n\n"
              
         # Send word to the word queue with I'd capitalized

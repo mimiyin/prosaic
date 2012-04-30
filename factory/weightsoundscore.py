@@ -63,7 +63,7 @@ def rescore_it(form, scores, weighted=True):
                 # Add freq score
                 total_score += weight_it(1, scoresies[1], values)
                 # Add syllable score
-                total_score += weight_it(2, scoresies[2], values) 
+                #total_score += weight_it(2, scoresies[2], values) 
                        
         scores[idx].insert(1, int(total_score))
     return scores
@@ -73,7 +73,7 @@ def weight_it(sdx, score, values):
     elif sdx == 4: weighted_score = score*(values[2] + 100)   # Scramble
     elif sdx == 2: 
         if score == 0: score = 1
-        weighted_score = (1/score)*values[0]         # Syllable count
+        weighted_score = (score)*values[0]         # Syllable count
     elif sdx == 1: weighted_score = math.log(score)           # Freqency score
     
     return weighted_score
