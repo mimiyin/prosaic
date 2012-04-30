@@ -17,8 +17,8 @@ function scroll(current, wordsies, callback) {
 	
 	// Move the starting point of the animation
 	wordDiv.css({
-		'top'  : 480,	
-		'bottom' : 10,
+		'top'  : height-100,	
+		'left' : 0,
 		});
 	
 	//console.log(wordDiv);
@@ -30,7 +30,7 @@ function scroll(current, wordsies, callback) {
 	 */
 	wordDiv.delay(delay).animate({
 		fontSize: max + 'px',
-		}, 1000, function(){ 
+		}, 750, function(){ 
 			callback();
 			$(this).animate({
 				top: -100,

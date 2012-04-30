@@ -2,7 +2,7 @@
 from django.template.loader import get_template
 from django.template import Context, RequestContext
 from django.http import HttpResponse
-from prosaic.util.http import wrap_response
+from util.http import wrap_response
 
 from django.shortcuts import get_object_or_404, render, redirect, render_to_response
 from models import Poem, PoemForm

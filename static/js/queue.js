@@ -11,7 +11,7 @@ function queueWrapper(path, callback, queryParameters) {
 };
 
 
-var hood = false;
+var hood = true;
 
 // Get the data
 var queue = {
