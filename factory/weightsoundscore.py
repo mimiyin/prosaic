@@ -22,6 +22,8 @@ def parse_output(output, wordlist):
     # Create reversed ngram phs        
     parsed_output[3] = parsed_output[2][0:]
     parsed_output[3].reverse()
+    
+    print parsed_output[2]
        
     return parsed_output     
     

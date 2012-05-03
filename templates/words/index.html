@@ -26,6 +26,7 @@
 	// On reload, tell the server to kill all controls
 	queueWrapper('controls', updateControls, [0,0,0,0,0,0,0]);
 	var open = false;
+	var hood = true;
 	
 	function updateControls(data) {
 		$(".control").each(function(idx){
@@ -101,10 +102,7 @@
 	
 	function initHood() {
 		queue.reInit();
-		if(hood) {
-			queue.getData(false);
-		}
-		else queue.getData(true);
+		queue.getData(!hood);
 	}
 	queue.getData(true);
 </script>
