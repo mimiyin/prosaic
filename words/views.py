@@ -1,13 +1,14 @@
 # Create your views here.
-from django.template.loader import get_template
-from django.template import Context, RequestContext
-from django.http import HttpResponse
 from util.http import wrap_response
+from util.prequeued import prequeue
 
-from django.shortcuts import get_object_or_404, render, redirect, render_to_response
-from models import Poem, PoemForm
-import datetime
+from django.shortcuts import render
+from models import Poem
 from django.core.cache import cache
+
+import random
+import cPickle as pickle
+
 
 def index(request):
     latest_poem_list = Poem.objects.all().order_by('-pub_date')[:10]
@@ -31,7 +32,13 @@ def queue(request):
         print "bookmark: " + str(bookmark)  
         
     words = {'bookmark': bookmark, 'words' : cache.get(bookmark)}  
-    if words['words'] is None: words = { 'bookmark': -1, 'words' : ['wait', 'wait'] }
+    if words['words'] is None: 
+        num = random.randrange(0, 3, 1)
+        print num
+        pq = "/Users/hamstar/gitroot/prosaic/static/data/prequeued_" + str(num) + ".pickle"
+        with open(pq, 'rb') as c: prequeued = pickle.load(c)
+        
+        words = { 'bookmark': -1, 'words' : prequeued }
     print words
     return wrap_response(words)
 
@@ -41,8 +48,5 @@ def controls(request):
     cache.set('controls', controls)
     print cache.get('controls')
     return wrap_response(current)
-    
-
-
 
 

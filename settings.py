@@ -161,6 +161,8 @@ LOGGING = {
 # Caching words in memory
 CACHES = {
     'default': {
+        #'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        #'LOCATION': '/var/tmp/django_cache'
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         #'LOCATION': 'unix:</home/capps/memcached.sock>',
         'LOCATION': '127.0.0.1:11211'

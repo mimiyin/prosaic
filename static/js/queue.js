@@ -10,8 +10,6 @@ function queueWrapper(path, callback, queryParameters) {
 	});
 };
 
-
-
 // Get the data
 var queue = {
 		
