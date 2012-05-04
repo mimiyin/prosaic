@@ -8,7 +8,7 @@ def prequeue():
     #bookmark = 0
     #cache.clear()
 
-    prequeued = open('/Users/hamstar/gitroot/prosaic/static/data/1.txt', 'r')
+    prequeued = open('/Users/hamstar/gitroot/prosaic/static/data/2.txt', 'r')
     
     lines = prequeued.readlines()
 
@@ -20,6 +20,6 @@ def prequeue():
     
     #cache.set('prequeued', queue, 3600)    
     #cache.set('bookmark', -1, 3600)  
-    pickle.dump( queue, open( "/Users/hamstar/gitroot/prosaic/static/data/prequeued_1.pickle", "wb" ), pickle.HIGHEST_PROTOCOL)
+    pickle.dump( queue, open( "/Users/hamstar/gitroot/prosaic/static/data/prequeued_2.pickle", "wb" ), pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__': prequeue()

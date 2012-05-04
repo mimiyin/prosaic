@@ -80,7 +80,8 @@ var queue = {
  		if (queue.w >= queue.words.length) {
  			queue.w = 0;
  			console.log("NEED MORE DATA: " + queue.w.toString());
- 			queue.getData();
+			console.log("THE END");
+ 			//queue.getData();
  			}
 		else if(!hood) {
 			console.log("ANIMATING WORDS");
@@ -106,7 +107,8 @@ var queue = {
 		else {
 			console.log("SCROLLING");
 			scroll(queue.w, queue.words[queue.w], function() {
-				queue.againAgain(false)});
+				queue.againAgain(false)
+				});
 			}
 	 	},
 	 	

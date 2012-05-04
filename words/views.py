@@ -34,6 +34,7 @@ def queue(request):
     words = {'bookmark': bookmark, 'words' : cache.get(bookmark)}  
     if words['words'] is None: 
         num = random.randrange(0, 3, 1)
+        num = 2
         print num
         pq = "/Users/hamstar/gitroot/prosaic/static/data/prequeued_" + str(num) + ".pickle"
         with open(pq, 'rb') as c: prequeued = pickle.load(c)

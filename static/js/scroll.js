@@ -30,7 +30,7 @@ function scroll(current, wordsies, callback) {
 	 */
 	wordDiv.delay(delay).animate({
 		fontSize: max + 'px',
-		}, 750, function(){ 
+		}, 775, function(){ 
 			callback();
 			$(this).animate({
 				top: -100,
