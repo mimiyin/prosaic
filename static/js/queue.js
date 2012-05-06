@@ -34,7 +34,7 @@ var queue = {
 		$(".word").fadeOut(5000);
 	},
 	
-	getData: function() {
+	getData: function(subQ) {
 		console.log(queue.words);
 		if (queue.q_idx > 9) queue.q_idx = 0;
 		queueWrapper('queue', function(data){
@@ -70,7 +70,8 @@ var queue = {
 			{
 				queue : queue.q_idx,
 				start: queue.start_idx,
-				started: queue.started
+				started: queue.started,
+				subQ: subQ
 			});		
 		},
 

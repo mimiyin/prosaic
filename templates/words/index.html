@@ -60,8 +60,9 @@
 	$(".control").each(function(i){
 		$(this).click(function(e){
 			e.stopPropagation();
-			$(this).toggleClass('on');			
-			var controls = {}
+			$("#controls div").removeClass('on');			
+			$(this).toggleClass('on');
+			
 			sendControls();
 			});
 		});
@@ -83,9 +84,13 @@
 	}
 	
 	function sendControls() {
+		var controls = {};
+		var subQ = -1;
+		
 		$(".control").each(function(idx){
 
 			if ($(this).hasClass('on')) {
+				subQ = idx;
 				controls[idx] = 1;	
 				}
 			else controls[idx] = 0;
@@ -95,14 +100,14 @@
 			if (control > 0) hood = true;			
 			});
 		
-		initHood();
+		initHood(isOn);
 		
-		queueWrapper('controls', function(){ console.log("SENT!")}, controls);
+		//queueWrapper('controls', function(){ console.log("SENT!")}, controls);
 	}
 	
 	function initHood() {
 		queue.reInit();
-		queue.getData(!hood);
+		queue.getData(subQ);
 	}
 	queue.getData(true);
 </script>

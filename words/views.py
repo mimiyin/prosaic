@@ -19,6 +19,8 @@ def index(request):
 
 def queue(request):
     started = int(request.GET.get('started'))
+    subQ = int(request.Get.get('subQ'))
+    
     print "started: " + str(started)
     if started > 0:
         print "Poem has started!"
@@ -31,13 +33,16 @@ def queue(request):
         bookmark = cache.get('bookmark')
         print "bookmark: " + str(bookmark)  
         
-    words = {'bookmark': bookmark, 'words' : cache.get(bookmark)}  
+    words = {'bookmark': bookmark, 'words' : cache.get(bookmark)}
+      
     if words['words'] is None: 
-        num = random.randrange(0, 2, 1)
-        print num
-        pq = settings.STATIC_ROOT + "data/prequeued_" + str(num) + ".pickle" #/Users/hamstar/gitroot/prosaic/static/
+        if subQ < 0:
+            num = random.randrange(0, 2, 1)
+            print num
+            pq = settings.STATIC_ROOT + "data/prequeued_" + str(num) + ".pickle" #/Users/hamstar/gitroot/prosaic/static/            
+        else:
+            pq = settings.STATIC_ROOT + "data/subqueued_" + str(subQ) + '.pickle'    
         with open(pq, 'rb') as c: prequeued = pickle.load(c)
-        
         words = { 'bookmark': -1, 'words' : prequeued }
     print words
     return wrap_response(words)
