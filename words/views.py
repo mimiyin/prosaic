@@ -8,7 +8,7 @@ from django.core.cache import cache
 
 import random
 import cPickle as pickle
-
+import settings
 
 def index(request):
     latest_poem_list = Poem.objects.all().order_by('-pub_date')[:10]
@@ -35,7 +35,7 @@ def queue(request):
     if words['words'] is None: 
         num = random.randrange(0, 2, 1)
         print num
-        pq = "/Users/hamstar/gitroot/prosaic/static/data/prequeued_" + str(num) + ".pickle"
+        pq = settings.STATIC_ROOT + "data/prequeued_" + str(num) + ".pickle" #/Users/hamstar/gitroot/prosaic/static/
         with open(pq, 'rb') as c: prequeued = pickle.load(c)
         
         words = { 'bookmark': -1, 'words' : prequeued }
