@@ -100,16 +100,16 @@
 			if (control > 0) hood = true;			
 			});
 		
-		initHood(isOn);
+		initHood(subQ);
 		
 		//queueWrapper('controls', function(){ console.log("SENT!")}, controls);
 	}
 	
-	function initHood() {
+	function initHood(subQ) {
 		queue.reInit();
 		queue.getData(subQ);
 	}
-	queue.getData(true);
+	queue.getData(-1);
 </script>
 
 {% endblock %}

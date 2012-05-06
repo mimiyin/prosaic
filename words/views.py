@@ -19,7 +19,7 @@ def index(request):
 
 def queue(request):
     started = int(request.GET.get('started'))
-    subQ = int(request.Get.get('subQ'))
+    subQ = int(request.GET.get('subQ'))
     
     print "started: " + str(started)
     if started > 0:
@@ -39,9 +39,10 @@ def queue(request):
         if subQ < 0:
             num = random.randrange(0, 2, 1)
             print num
-            pq = settings.STATIC_ROOT + "data/prequeued_" + str(num) + ".pickle" #/Users/hamstar/gitroot/prosaic/static/            
+            pq = settings.STATIC_ROOT + "data/prequeued_" + str(num) + ".pickle"         
         else:
-            pq = settings.STATIC_ROOT + "data/subqueued_" + str(subQ) + '.pickle'    
+            pq = settings.STATIC_ROOT + "data/subqueued_" + str(subQ) + '.pickle' 
+               
         with open(pq, 'rb') as c: prequeued = pickle.load(c)
         words = { 'bookmark': -1, 'words' : prequeued }
     print words
