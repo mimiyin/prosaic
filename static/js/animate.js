@@ -84,7 +84,7 @@ function doIt(current, theWord, grow, shrink, delay, callback) {
 	
 	
 	// Figure out max font-size for this phrase
-	var max = parseInt(Math.random()*1000) + 200;//resizeText(wordDiv);
+	var max = parseInt(Math.random()*1000) + 100;//resizeText(wordDiv);
 	wordDiv.empty();
 	wordDiv.css('font-size', 0);
 	
