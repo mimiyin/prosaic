@@ -81,7 +81,7 @@ var queue = {
  			queue.w = 0;
  			console.log("NEED MORE DATA: " + queue.w.toString());
 			console.log("THE END");
- 			//queue.getData();
+ 			queue.getData();
  			}
 		else if(!hood) {
 			console.log("ANIMATING WORDS");
