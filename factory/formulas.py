@@ -279,8 +279,8 @@ class Formula:
         if self.winner < 2 or self.winner == 4: self.clip_it()
         
         if len(self.output) > 3:
-            for stopword in ['in a', 'of a', 'on a', 'in the', 'of the', 'on the', 'a', 'the', 'that', 'of', 'in']:
-                if re.search('\b'+stopword+'$' , self.output_str): 
+            for stopword in ['in a', 'of a', 'on a', 'in the', 'of the', 'on the', 'a', 'an', 'the', 'that', 'of', 'in']:
+                if re.search('\\b'+stopword+'$' , self.output_str): 
                     print "FOUND STOPWORD"
                     self.output_str = self.output_str[:-len(stopword)]
                     break
