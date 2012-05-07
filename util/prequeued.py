@@ -6,9 +6,15 @@ import cPickle as pickle
 def prequeue():
     queue = []
     #bookmark = 0
-    #cache.clear()
+    cache.clear()
 
-    prequeued = open('/Users/hamstar/gitroot/prosaic/static/data/1.txt', 'r')
+    try:
+        user_input = raw_input("Enter filename: ")
+    except KeyboardInterrupt:
+        print '\nInput Error'
+        return
+
+    prequeued = open('/Users/hamstar/gitroot/prosaic/static/data/' + user_input + '.txt', 'r')
     
     lines = prequeued.readlines()
 
@@ -20,6 +26,6 @@ def prequeue():
     
     #cache.set('prequeued', queue, 3600)    
     #cache.set('bookmark', -1, 3600)  
-    pickle.dump( queue, open( "/Users/hamstar/gitroot/prosaic/static/data/prequeued_1.pickle", "wb" ), pickle.HIGHEST_PROTOCOL)
+    pickle.dump( queue, open( '/Users/hamstar/gitroot/prosaic/static/data/' + user_input + '.pickle', 'wb' ), pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__': prequeue()

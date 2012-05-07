@@ -2,6 +2,7 @@ import random
 import math
 import time
 import re
+from numpy import interp
 
 from collections import deque
 import cPickle as pickle
@@ -254,16 +255,15 @@ class Formula:
         # Look for 'i's inside word boundaries or between word boundary and line break
         return re.sub(r'\bi(\b|\n)', 'I', output) 
     
+    
     def clip_it(self):
         tokens = self.output_str.split()
         # Clip and print the repeat and remixed versions
-        max_words = len(tokens)-1
+        max_words = len(tokens) + 1
         if max_words > 5 or self.winner < 3:
-            print "CLIPPING"
-            clip_mult = (self.meta_voices[2].value + 100)*.005
-            clip = int(clip_mult*max_words)
-            if clip > max_words: clip = max_words
-            elif clip < 1: clip = 1
+            clip = self.meta_voices[2].value
+            clip = int(interp(clip, [-100, 100], [0, max_words] ))
+            print "CLIPPING: " + str(clip)
             self.output_str = (' ').join(tokens[0:clip])
         
     def print_it(self):

@@ -35,6 +35,7 @@ var queue = {
 	},
 	
 	getData: function(subQ) {
+		console.log(subQ);
 		console.log(queue.words);
 		if (queue.q_idx > 9) queue.q_idx = 0;
 		queueWrapper('queue', function(data){
@@ -52,7 +53,7 @@ var queue = {
 				console.log("STARTING");
 				queue.start_idx = data.bookmark;
 				queue.started = 1;
-				queue.getData();
+				queue.getData(subQ);
 			}
 			// Start the Poem Animation
 			else if(queue.started > 0) {

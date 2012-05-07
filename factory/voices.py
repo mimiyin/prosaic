@@ -8,7 +8,7 @@ import die
 def add_voices(how_many_to_add, duration, mode_ranges, wave_ranges):
     # Create voices
     # Store values for color, whether to modulate frequency, duration, duration counter and curve type
-    return [Voice(duration = duration, mode_ranges = mode_ranges, wave_ranges = wave_ranges, mode_idx = -1) for i in range(how_many_to_add)]
+    return [Voice(duration = duration, mode_ranges = mode_ranges, wave_ranges = wave_ranges, mode_idx = 1) for i in range(how_many_to_add)]
 
 def create_wave(wave_idx, mod_freq):
             # Store curve
