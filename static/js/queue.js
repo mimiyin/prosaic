@@ -35,6 +35,7 @@ var queue = {
 	},
 	
 	getData: function(subQ) {
+		var subQ = subQ;
 		console.log(subQ);
 		console.log(queue.words);
 		if (queue.q_idx > 9) queue.q_idx = 0;
@@ -63,7 +64,7 @@ var queue = {
 					}
 				 else {
 					queue.timer = 0;
-					queue.timer = setTimeout("queue.getData()", 5000);
+					queue.timer = setTimeout("queue.getData(subQ)", 5000);
 					queue.w = 0;
 					}
 				}
