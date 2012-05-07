@@ -88,6 +88,5 @@ a:visited {
 }
 
 #about {
-	margin-top: -20px;
-	margin-bottom: 20px;
+	margin: -20px 5px 20px 0px;
 }
