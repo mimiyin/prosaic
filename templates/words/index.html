@@ -121,10 +121,19 @@
 
 	// Get reading
 	$("#reading a").click(function(){
-			hood = !hood;
+			hood = true;
 			initHood(-1, 0);
 	});
+	
+	// Music
+	$("#listen a").click(function(){
+			hood = false;
+			initHood(-1, -1);
+	});
 
+	
+	setTimeout('$(".ywp-container").fadeOut("slow")', 500);
+	
 </script>
 
 {% endblock %}
