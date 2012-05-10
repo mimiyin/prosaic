@@ -12,6 +12,9 @@
 
 {% block body %}
 
+<div id=listen><a href="{{STATIC_URL}}data/listen.mp3">Listen</a></div>
+ <div id=reading><a  href="{{STATIC_URL}}data/reading.mp3">Reading</a></div>
+
 <div id=controls>
 	<div id=label>peek under the hood</div>
 	<div id=about><a href=http://itp.nyu.edu/~yy600/blog/prosaic/ target=_blank>about</a></div>
@@ -23,12 +26,15 @@
 	<div id=5 class='control off'>alliterate</div>
 	<div id=6 class='control off'>rhyme</div>
 </div>
+<script type="text/javascript" src="http://mediaplayer.yahoo.com/js"></script>
 <script type=text/javascript>
+
 	// On reload, tell the server to kill all controls
 	queueWrapper('controls', updateControls, [0,0,0,0,0,0,0]);
 	var open = false;
 	var hood = false;
-	
+
+
 	function updateControls(data) {
 		$(".control").each(function(idx){
 			if (data[idx] > 0) {
@@ -43,7 +49,8 @@
 	}
 	
 	$("#controls").click(function(){
-		hood = !hood;
+		if(open) hood = false;
+		else hood = true;
 		
 		// Closing the hood, turns off all controls
 		// Send new control status to the server
@@ -101,16 +108,23 @@
 			if (control > 0) hood = true;			
 			});
 		
-		initHood(subQ);
+		initHood(subQ, -1);
 		
 		//queueWrapper('controls', function(){ console.log("SENT!")}, controls);
 	}
 	
-	function initHood(subQ) {
-		queue.reInit();
-		queue.getData(subQ);
+	function initHood(subQ, preQ) {
+		queue.reInit(subQ, preQ);
+		queue.getData();
 	}
-	queue.getData(-1);
+	queue.getData();
+
+	// Get reading
+	$("#reading a").click(function(){
+			hood = !hood;
+			initHood(-1, 0);
+	});
+
 </script>
 
 {% endblock %}

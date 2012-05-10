@@ -20,6 +20,7 @@ def index(request):
 def queue(request):
     started = int(request.GET.get('started'))
     subQ = int(request.GET.get('subQ'))
+    preQ = int(request.GET.get('preQ'))
     
     print "started: " + str(started)
     if started > 0:
@@ -36,10 +37,12 @@ def queue(request):
     words = {'bookmark': bookmark, 'words' : cache.get(bookmark)}
       
     if words['words'] is None: 
-        if subQ < 0:
+        if preQ >= 0:
+            pq = settings.STATIC_ROOT + "data/prequeued_" + str(preQ) + ".pickle"
+        elif subQ < 0:
             num = random.randrange(0, 2, 1)
             print num
-            pq = settings.STATIC_ROOT + "data/prequeued_" + str(num) + ".pickle"         
+            pq = settings.STATIC_ROOT + "data/prequeued_" + str(num) + ".pickle" 
         else:
             pq = settings.STATIC_ROOT + "data/subqueued_" + str(subQ) + '.pickle' 
                

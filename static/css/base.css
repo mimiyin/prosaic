@@ -51,12 +51,13 @@ a:visited {
 	position: absolute;
 	color: #fff;
 	width: 100%;
+	pointer-events: none;
 }
 
 #controls {
 	position: absolute;
 	top: 200px;
-	right: -1250px;
+	right: -125px;
 	z-index: 100;
 	opacity: .875;
 	padding: 10px 0px 10px 25px;
@@ -65,6 +66,17 @@ a:visited {
 	font-size: 1.15em;
 	font-weight: bold;
 	cursor: pointer;
+}
+
+#listen, #reading {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+
+#listen {
+	right: 100px;
 }
 
 #label {

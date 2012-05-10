@@ -1,5 +1,5 @@
 function scroll(current, wordsies, callback) {
-	console.log("SCROLLING: " + wordsies.toString());
+	//console.log("SCROLLING: " + wordsies.toString());
 	// Size the animation div according to longest word
 	var theWordsie = '#word' + current;
 	

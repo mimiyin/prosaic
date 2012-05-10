@@ -20,7 +20,7 @@ def build_range_from_values(values):
     add_on = 0
     for vdx, value in enumerate(values):
         values[vdx] += add_on
-        add_on = values[vdx]
+        add_on = abs(values[vdx])
     
     return values    
 
