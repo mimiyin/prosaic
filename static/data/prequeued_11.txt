@@ -20,13 +20,14 @@ complex
 conference
 contract
 cards
-cards
+in the cards
 is
 towards
 kids
 his
-as
+has
 methods
+has
 standards
 has
 thousands
@@ -128,7 +129,6 @@ the
 in the middle 
 in order to grasp 
 data
-ca
 and the rest 
 at the bottom 
 at the time 
