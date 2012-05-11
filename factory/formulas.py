@@ -229,7 +229,7 @@ class Formula:
 
     def parse_rhymes(self, options, cap):
         for i in range(cap):
-                if i % 3 == 0:#int(random.random()*cap):
+                if i % 2 == int(random.random()*cap):
                     self.output = options[i]
                     self.print_it()
             

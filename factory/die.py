@@ -34,7 +34,7 @@ def how_many_to_add(how_many_now, ranges):
 
 
 def pick_one(ranges):
-    top = max(ranges[0:])
+    top = max(ranges[0:]) + 1
     bottom = min(ranges[0:])-1
         
     # Pick a number within that range

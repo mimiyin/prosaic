@@ -1,6 +1,8 @@
 import math
 import random
 
+xdelta = 2
+
 class Sine_Wave:
     '''Gradual Growth and Decay'''
     def __init__(self, mod_freq):
@@ -13,7 +15,7 @@ class Sine_Wave:
 
     def run(self): 
         if self.mod_freq: self.freq_mult = math.sin(0.5*self.x) + 1.1
-        self.x += 1
+        self.x += xdelta
         return int(math.sin(self.freq_mult*self.x)*100)
 
 
@@ -30,7 +32,7 @@ class Tan_Wave:
 
     def run(self):
         if self.mod_freq: self.freq_mult = random.randrange(0, 1000)
-        self.x += 1
+        self.x += xdelta
         return int(math.tan(self.freq_mult*self.x))
     
 class Square_Wave:
@@ -57,7 +59,7 @@ class Square_Wave:
         if self.mod_hi: self.hi_period = self.modulate_hi.run()*0.15 + 16
         if self.mod_lo: self.lo_period = self.modulate_lo.run()*0.05 + 6
 
-        self.x += 1
+        self.x += xdelta
         
         if self.up and self.x < self.hi_period: self.value = 1
         elif not self.up and self.x < self.lo_period: self.value = -1
@@ -80,7 +82,7 @@ class Saw_Tooth:
         
         if self.value < 1: self.value += self.x
         else: 
-            self.value = -1
+            self.value = -xdelta
             if self.mod_freq: self.x = random.random()
 
     

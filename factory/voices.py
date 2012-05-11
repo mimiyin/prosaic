@@ -65,6 +65,7 @@ class Voice:
         
         # Pick a Duration
         self.duration = random.randrange(0, duration, 1)
+        print "DURATION!!! " + str(self.duration)
         # Kick off Duration counter for each voice
         self.counter = 0
     
