@@ -12,8 +12,8 @@
 
 {% block body %}
 
-<div id=listen><a href="{{STATIC_URL}}data/listen.mp3">Listen</a></div>
- <div id=reading><a  href="{{STATIC_URL}}data/reading.mp3">Reading</a></div>
+<div id=listen><a href="{{STATIC_URL}}data/listen.mp3">Crazy</a></div>
+<div id=reading><a  href="{{STATIC_URL}}data/reading.mp3">Reading</a></div>
 
 <div id=controls>
 	<div id=label>peek under the hood</div>
@@ -32,7 +32,7 @@
 	// On reload, tell the server to kill all controls
 	queueWrapper('controls', updateControls, [0,0,0,0,0,0,0]);
 	var open = false;
-	var hood = false;
+	var hood = true;
 
 
 	function updateControls(data) {
@@ -49,18 +49,8 @@
 	}
 	
 	$("#controls").click(function(){
-		if(open) hood = false;
-		else hood = true;
-		
-		// Closing the hood, turns off all controls
-		// Send new control status to the server
-		if(!hood) {
-			$(".control").each(function(i, sendControls){
-				$(this).removeClass('on');
-				$(this).addClass('off');
-				});
-			}
-		
+		//if(open) hood = false;
+		//else hood = true;
 		if(!open) openControls($(this));
 		else closeControls($(this));
 	});
@@ -89,6 +79,14 @@
 			right: -125,
 		},1000);
 		open = false;
+		// Closing the hood, turns off all controls
+		// Send new control status to the server
+		//if(!hood) {
+			$(".control").each(function(i, sendControls){
+				$(this).removeClass('on');
+				$(this).addClass('off');
+				});
+			//}
 	}
 	
 	function sendControls() {
@@ -127,11 +125,10 @@
 	
 	// Music
 	$("#listen a").click(function(){
-			hood = false;
+			hood = !hood;
 			initHood(-1, -1);
 	});
 
-	
 	setTimeout('$(".ywp-container").fadeOut("slow")', 500);
 	
 </script>
