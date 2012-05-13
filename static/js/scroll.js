@@ -8,7 +8,7 @@ function scroll(current, wordsies, callback) {
 	
 	
 	// Figure out max font-size for this phrase
-	var max = 100;
+	var max = 50;
 	wordDiv.text(wordsies);
 	wordDiv.css('font-size', 0);
 	
@@ -17,8 +17,10 @@ function scroll(current, wordsies, callback) {
 	
 	// Move the starting point of the animation
 	wordDiv.css({
+		'width'	: '50%',
+		'float'	: 'left',
 		'top'  : height-100,	
-		'left' : 0,
+		//'left' : 0,
 		});
 	
 	//console.log(wordDiv);
