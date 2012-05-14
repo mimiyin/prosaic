@@ -33,7 +33,8 @@
 	queueWrapper('controls', updateControls, [0,0,0,0,0,0,0]);
 	var open = false;
 	var hood = true;
-
+	var play = false;
+	var subQ = -1;
 
 	function updateControls(data) {
 		$(".control").each(function(idx){
@@ -91,7 +92,6 @@
 	
 	function sendControls() {
 		var controls = {};
-		var subQ = -1;
 		
 		$(".control").each(function(idx){
 
@@ -101,7 +101,10 @@
 				}
 			else controls[idx] = 0;
 			});
+		
+		//Re-Check hood status after every click
 		hood = false;
+		
 		$.each(controls, function(c, control){
 			if (control > 0) hood = true;			
 			});
@@ -125,8 +128,17 @@
 	
 	// Music
 	$("#listen a").click(function(){
-			hood = !hood;
+		play = !play;
+		if(play) {
+			console.log("PLAY");
+			hood = false;
+			closeControls($("#controls"));
 			initHood(-1, -1);
+		}
+		if(!play) {
+			console.log("NOT PLAY");
+			hood = true;
+		}
 	});
 
 	setTimeout('$(".ywp-container").fadeOut("slow")', 500);
