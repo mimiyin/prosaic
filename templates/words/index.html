@@ -102,8 +102,7 @@
 				
 				// Turn off the reading and reset it to the beginning
 				if(reading) {
-					YAHOO.MediaPlayer.previous();
-					YAHOO.MediaPlayer.stop();
+					stop();
 					reading = false;
 					}
 				}
@@ -127,7 +126,13 @@
 		queue.getData();
 	}
 	queue.getData();
-
+	
+	function stop() {
+		console.log("STOPPING");
+		YAHOO.MediaPlayer.previous();
+		YAHOO.MediaPlayer.stop();
+	}
+	
 	// Get reading
 	$("#reading a").click(function(){
 			//hood = true;
@@ -141,6 +146,11 @@
 				closeControls($("#controls"));
 				initHood(-1, 0);
 			}
+			else {
+				stop();
+				setTimeout('stop()', 100);
+			}
+			
 
 	});
 	
