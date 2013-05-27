@@ -1,6 +1,5 @@
 function queueWrapper(path, callback, queryParameters) {
 	var nextDelimiter = '?';
-	// There's probably a library that handles this, eh?
 	for ( var qp in queryParameters) {
 		path += nextDelimiter + qp + '=' + queryParameters[qp];
 		nextDelimiter = '&';

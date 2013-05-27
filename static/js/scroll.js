@@ -17,7 +17,7 @@ function scroll(current, wordsies, callback) {
 	
 	// Move the starting point of the animation
 	wordDiv.css({
-		'width'	: '50%',
+		'width'	: '100%',
 		'float'	: 'left',
 		'top'  : height-100,	
 		//'left' : 0,
@@ -35,9 +35,10 @@ function scroll(current, wordsies, callback) {
 		}, 775, function(){ 
 			callback();
 			$(this).animate({
-				top: -100,
+				//top: -100,
 				fontSize: 0,
-			}, 10000, function(){
+				opacity : 0,
+			}, 5000, function(){
 				$(this).remove();
 			});
 		});
