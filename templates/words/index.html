@@ -12,12 +12,12 @@
 
 {% block body %}
 
-<div id=listen><a href="{{STATIC_URL}}data/listen.mp3">Crazy</a></div>
-<div id=reading><a  href="{{STATIC_URL}}data/reading.mp3">Reading</a></div>
+<div id=drill>B</div>
+<div id=scatter>A</a></div>
 
 <div id=controls>
 	<div id=label>peek under the hood</div>
-	<div id=about><a href=http://itp.nyu.edu/~yy600/blog/prosaic/ target=_blank>about</a></div>
+	<!-- <div id=about><a href=http://itp.nyu.edu/~yy600/blog/prosaic/ target=_blank>about</a></div> -->
 	<div id=0 class='control off'>repeat</div>
 	<div id=1 class='control off'>remix</div>
 	<div id=2 class='control off'>stutter</div>
@@ -26,8 +26,7 @@
 	<div id=5 class='control off'>alliterate</div>
 	<div id=6 class='control off'>rhyme</div>
 </div>
-<script type="text/javascript" src="http://mediaplayer.yahoo.com/js"></script>
-<script type=text/javascript>
+ <script type=text/javascript>
 
 	// On reload, tell the server to kill all controls
 	queueWrapper('controls', updateControls, [0,0,0,0,0,0,0]);
@@ -127,15 +126,9 @@
 		queue.getData();
 	}
 	queue.getData();
-	
-	function stop() {
-		console.log("STOPPING");
-		YAHOO.MediaPlayer.previous();
-		YAHOO.MediaPlayer.stop();
-	}
-	
+		
 	// Get reading
-	$("#reading a").click(function(){
+	$("#drill").click(function(){
 			//hood = true;
 			//initHood(-1, 0);
 			crazy = false;
@@ -146,17 +139,11 @@
 				hood = true;
 				closeControls($("#controls"));
 				initHood(-1, 0);
-			}
-			else {
-				stop();
-				setTimeout('stop()', 100);
-			}
-			
-
+			}			
 	});
 	
 	// Music
-	$("#listen a").click(function(){
+	$("#scatter").click(function(){
 		reading = false;
 		crazy = !crazy;
 		

@@ -68,15 +68,18 @@ a:visited {
 	cursor: pointer;
 }
 
-#listen, #reading {
-	position: absolute;
+#scatter, #drill {
+	float : right;
+	position: relative;
 	top: 10px;
-	right: 10px;
+	right: 50px;
 	cursor: pointer;
+	background: rgba(255,255,255,.33);
+	padding: 5px;
 }
 
-#listen {
-	right: 100px;
+#drill {
+	margin-left: 20px;
 }
 
 #label {
