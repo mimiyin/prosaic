@@ -6,9 +6,9 @@ function scroll(current, wordsies, callback) {
 	var wordDiv = $('<div>').addClass('word').attr('id', 'word' + current);
 	$('body').append(wordDiv);	
 	
-	
+		
 	// Figure out max font-size for this phrase
-	var max = 50;
+	var max = .08 * $(window).width();
 	wordDiv.text(wordsies);
 	wordDiv.css('font-size', 0);
 	
@@ -19,7 +19,7 @@ function scroll(current, wordsies, callback) {
 	wordDiv.css({
 		'width'	: '100%',
 		'float'	: 'left',
-		'top'  : height-100,	
+		'top'  : height-(height*.15),
 		//'left' : 0,
 		});
 	
@@ -32,7 +32,7 @@ function scroll(current, wordsies, callback) {
 	 */
 	wordDiv.delay(delay).animate({
 		fontSize: max + 'px',
-		}, 775, function(){ 
+		}, wordsies.length*20 + 500, function(){ 
 			callback();
 			$(this).animate({
 				//top: -100,
