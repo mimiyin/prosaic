@@ -3,8 +3,9 @@ function scroll(current, wordsies, callback) {
 	// Size the animation div according to longest word
 	var theWordsie = '#word' + current;
 	
-	var wordDiv = $('<div>').addClass('word').attr('id', 'word' + current);
-	$('body').append(wordDiv);	
+	var countDiv = $('<div>').addClass('count').attr('id', 'count-for-' + current).text(current+1);
+	var wordDiv = $('<div>').addClass('word').attr('id', current);
+	$('body').append(countDiv).append(wordDiv);	
 	
 		
 	// Figure out max font-size for this phrase
@@ -19,7 +20,6 @@ function scroll(current, wordsies, callback) {
 	wordDiv.css({
 		'width'	: '100%',
 		'float'	: 'left',
-		'top'  : height-(height*.15),
 		//'left' : 0,
 		});
 	
@@ -33,6 +33,8 @@ function scroll(current, wordsies, callback) {
 	wordDiv.delay(delay).animate({
 		fontSize: max + 'px',
 		}, wordsies.length*20 + 500, function(){ 
+			var id = $(this).attr('id');
+			$("#count-for-" + id).remove();
 			callback();
 			$(this).animate({
 				//top: -100,

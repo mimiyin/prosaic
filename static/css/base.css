@@ -44,11 +44,22 @@ a:visited {
 	font-weight: bold;
 }
 
+.count {
+	float: left;
+	font-size: 3.5em;
+	position: fixed;
+	top: 10px;
+	width: 100%;
+	text-align: center;
+	color: rgba(255,255,255,.5);
+}
+
 .word, .scroll {
 	opacity: .95; 
 	text-align : center;
 	font-size: 5em;
-	position: absolute;
+	position: fixed;
+	bottom: 5%;
 	color: #fff;
 	width: 100%;
 	pointer-events: none;
@@ -69,17 +80,17 @@ a:visited {
 }
 
 #scatter, #drill {
-	float : right;
+	float : left;
 	position: relative;
 	top: 10px;
-	right: 50px;
+	left: 30px;
 	cursor: pointer;
 	background: rgba(255,255,255,.33);
 	padding: 5px;
 }
 
 #drill {
-	margin-left: 20px;
+	margin-right: 20px;
 }
 
 #label {

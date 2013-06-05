@@ -78,7 +78,8 @@ var queue = {
 				start: queue.start_idx,
 				started: queue.started,
 				subQ: queue.subQ,
-				preQ: queue.preQ
+				preQ: queue.preQ,
+				mode: crazy ? "1" : "0",
 			});		
 		},
 
@@ -89,10 +90,10 @@ var queue = {
  			queue.w = 0;
  			console.log("NEED MORE DATA: " + queue.w.toString());
 			console.log("THE END");
- 			queue.getData(queue.subQ, queue.preQ);
+ 			setTimeout(function() { queue.getData(queue.subQ, queue.preQ) }, 5000);
  			}
 		else if(!hood) {
-			//console.log("ANIMATING WORDS");
+			console.log("ANIMATING WORDS");
 			console.log(queue.words.length);
 			var maxWords = queue.words.length;
 			if(maxWords > 10) maxWords = 10;

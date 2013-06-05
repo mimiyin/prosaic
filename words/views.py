@@ -19,6 +19,7 @@ def index(request):
 
 def queue(request):
     started = int(request.GET.get('started'))
+    # sub-queued are the different modes
     subQ = int(request.GET.get('subQ'))
     preQ = int(request.GET.get('preQ'))
     
@@ -40,7 +41,8 @@ def queue(request):
         if preQ >= 0:
             pq = settings.STATIC_ROOT + "data/prequeued_" + str(preQ) + ".pickle"
         elif subQ < 0:
-            num = random.randrange(0, 1, 1)
+            #num = random.randrange(0, 1, 1)
+            num = int(request.GET.get('mode'))
             print num
             pq = settings.STATIC_ROOT + "data/prequeued_" + str(num) + ".pickle" 
         else:
