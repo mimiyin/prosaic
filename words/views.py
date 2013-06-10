@@ -43,7 +43,6 @@ def queue(request):
         elif subQ < 0:
             #num = random.randrange(0, 1, 1)
             num = int(request.GET.get('mode'))
-            print num
             pq = settings.STATIC_ROOT + "data/prequeued_" + str(num) + ".pickle" 
         else:
             pq = settings.STATIC_ROOT + "data/subqueued_" + str(subQ) + '.pickle' 

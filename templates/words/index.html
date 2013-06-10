@@ -12,7 +12,7 @@
 
 {% block body %}
 
-<div id=drill>DRILL</div>
+<div id=drill>START AT THE BEGINNING</div>
 <div id=scatter>SCATTER</a></div>
 
 <div id=controls>
@@ -145,7 +145,7 @@
 	// Music
 	$("#scatter").click(function(){
 		reading = false;
-		crazy = !crazy;
+		crazy = true;
 		
 		if(crazy) {
 			console.log("CRAZY");
@@ -157,9 +157,12 @@
 			console.log("NOT CRAZY");
 			hood = true;
 		}
-	});
 
-	setTimeout('$(".ywp-container").fadeOut("slow")', 500);
+	setTimeout(function(){
+		$(".count").fadeOut("slow");
+		$(".ywp-container").fadeOut("slow");
+		}, 500);
+	});
 	
 </script>
 
