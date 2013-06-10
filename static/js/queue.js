@@ -38,9 +38,9 @@ var queue = {
 	},
 	
 	getData: function() {
-		console.log("PreQ: " + queue.preQ.toString());		
+		//console.log("PreQ: " + queue.preQ.toString());		
 		
-		console.log(queue.words);
+		//console.log(queue.words);
 		if (queue.q_idx > 9) queue.q_idx = 0;
 		
 		queueWrapper('queue', function(data){

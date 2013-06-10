@@ -32,7 +32,7 @@ function delay(){
 	}
 	  
 function animate(wordsToAnimate, callback) {
-	console.log("THE WORDS: " + wordsToAnimate.toString());
+	//console.log("THE WORDS: " + wordsToAnimate.toString());
 	if(wordsToAnimate != undefined && wordsToAnimate.length > 0) {
 		//console.log(thisWord);
 		//console.log(prevWord);

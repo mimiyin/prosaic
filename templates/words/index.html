@@ -37,10 +37,12 @@
 	var subQ = -1;
 
 	function updateControls(data) {
-		console.log(data);
+		//console.log(data);
+		if(!data)
+			return;
 		$(".control").each(function(idx){
 			if (data[idx] > 0) {
-				console.log("SOMETHING IS ON!!!");
+				//console.log("SOMETHING IS ON!!!");
 				if(!open) {
 					openControls($("#controls"));
 					initHood();
@@ -68,8 +70,8 @@
 		});
 	
 	function openControls(elem){
-		console.log("OPEN SESAME");
-		console.log(elem);
+		//console.log("OPEN SESAME");
+		//console.log(elem);
 		elem.animate({
 			right: 0,
 		},1000);
@@ -135,7 +137,7 @@
 			reading = !reading;
 			
 			if(reading) {
-				console.log("READ");
+				//console.log("READ");
 				hood = true;
 				closeControls($("#controls"));
 				initHood(-1, 0);
@@ -148,13 +150,13 @@
 		crazy = true;
 		
 		if(crazy) {
-			console.log("CRAZY");
+			//console.log("CRAZY");
 			hood = false;
 			closeControls($("#controls"));
 			initHood(-1, -1);
 		}
 		else {
-			console.log("NOT CRAZY");
+			//console.log("NOT CRAZY");
 			hood = true;
 		}
 
