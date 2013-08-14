@@ -37,7 +37,8 @@ var queue = {
 		$(".word").fadeOut(5000);
 	},
 	
-	getData: function() {
+	getData: function(name) {
+		queue.name = name;
 		//console.log("PreQ: " + queue.preQ.toString());		
 		
 		//console.log(queue.words);
@@ -45,6 +46,7 @@ var queue = {
 		
 		queueWrapper('queue', function(data){
 			queue.words = data.words;
+
 			// Cue Animation for "Testing 1,2,3"
 			if(data.bookmark < 0) {
 				queue.q_idx = 0;
@@ -68,12 +70,13 @@ var queue = {
 					}
 				 else {
 					queue.timer = 0;
-					queue.timer = setTimeout("queue.getData(subQ)", 5000);
+					queue.timer = setTimeout( function(){ queue.getData(subQ) }, 5000);
 					queue.w = 0;
 					}
 				}
 			},
 			{
+				name: queue.name,
 				queue : queue.q_idx,
 				start: queue.start_idx,
 				started: queue.started,
@@ -90,11 +93,10 @@ var queue = {
  			queue.w = 0;
  			console.log("NEED MORE DATA: " + queue.w.toString());
 			console.log("THE END");
- 			setTimeout(function() { queue.getData(queue.subQ, queue.preQ) }, 5000);
+ 			setTimeout(function() { queue.getData() }, 5000);
  			}
 		else if(!hood) {
-			console.log("ANIMATING WORDS");
-			console.log(queue.words.length);
+			console.log("ANIMATING " + queue.words.length +" WORDS");
 			var maxWords = queue.words.length;
 			if(maxWords > 10) maxWords = 10;
 			var numWords = parseInt(Math.random()*maxWords);

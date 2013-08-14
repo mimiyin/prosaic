@@ -1,0 +1,20 @@
+{% extends "words/base.html" %}
+{% block js %}
+		<script type=text/javascript src="{{STATIC_URL}}js/animate.js"></script>	  
+		<script type=text/javascript src="{{STATIC_URL}}js/scroll.js"></script>	  
+		<script type=text/javascript src="{{STATIC_URL}}js/queue.js"></script>	  
+{% endblock %}
+
+{% block title %}{% endblock %}
+{% block header %}{% endblock %}
+
+{% block body %}
+
+ <script type=text/javascript>	
+ 	var crazy = true;
+ 	var hood = false;
+	queue.getData("ventana");
+</script>
+
+{% endblock %}
+
