@@ -48,43 +48,49 @@ q.UI am
 q/UYou are
 q0UWe are
 q1U	They are
-q2UThey will be
-q3UThey can be
-q4UCan you give me
-q5UWill you give me
-q6UCan you forgive me
-q7UCan you forget
-q8UI can't forget
-q9UCan I forget
-q:UCan I take back
-q;UDo you take back
-q<UDo you remember
-q=UWill you remember
-q>U	Will you
-q?U	You will
-q@UWill you take back
-qAUWill you give back
-qBUI won't
-qCU
+q2UThey aren't
+q3UThey will be
+q4UThey won't be
+q5UThey can be
+q6UThey can't be
+q7UCan you give me
+q8UCan't you give me
+q9UWon't you give me
+q:UWill you give me
+q;UCan you forgive me
+q<UCan you forget me
+q=UCan you forget
+q>UI can't forget
+q?UCan I forget
+q@UCan I take back
+qAUDo you take back
+qBUDo you remember
+qCUWill you remember
+qDU	Will you
+qEU	You will
+qFUWill you take back
+qGUWill you give back
+qHUI won't
+qIU
 But maybe
-qDUBut maybe not
-qEUMaybe true
-qFUMaybe false
-qGUMaybe more
-qHUMaybe less
-qIU	Maybe no
-qJUMaybe you can
-qKUMaybe you can't
-qLUCan you say more
-qMUWon't you say more
-qNUWhy won't you say more
-qOUSo what
-qPU	For what
-qQU	Say what
-qRU	What for
-qSUWhat do you think
-qTUWhy do you think
-qUU	Why do I
-qVUDo I
-qWUOh do I
-qXe.
+qJUBut maybe not
+qKUMaybe true
+qLUMaybe false
+qMUMaybe more
+qNUMaybe less
+qOU	Maybe no
+qPUMaybe you can
+qQUMaybe you can't
+qRUCan you say more
+qSUWon't you say more
+qTUWhy won't you say more
+qUUSo what
+qVU	For what
+qWU	Say what
+qXU	What for
+qYUWhat do you think
+qZUWhy do you think
+q[U	Why do I
+q\UDo I
+q]UOh do I
+q^e.

@@ -47,11 +47,17 @@ I am
 You are
 We are
 They are
+They aren't
 They will be
+They won't be
 They can be
+They can't be
 Can you give me
+Can't you give me
+Won't you give me
 Will you give me
 Can you forgive me
+Can you forget me
 Can you forget
 I can't forget
 Can I forget
