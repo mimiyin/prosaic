@@ -12,7 +12,7 @@ var easingCount = easingOpts.length-1;
 
 function grow(numWords){
 		rgrow += Math.random()*10;
-		var dividend = 100*numWords;
+		var dividend = 50*numWords;
 		var growth = dividend/Math.abs(Math.sin(Math.tan(rgrow)));
 		//if(growth > rmax) growth = rmax;
 		return growth;
@@ -20,7 +20,7 @@ function grow(numWords){
 
 function shrink(numWords) {
 		rshrink += Math.random()*10;
-		var dividend = 100*numWords;
+		var dividend = 50*numWords;
 		var diminution = dividend/Math.abs(Math.cos(Math.tan(rshrink)));
 		//if(diminution > rmax) diminution = rmax;
 		return diminution;	
@@ -40,7 +40,7 @@ function animate(wordsToAnimate, callback) {
 		var mult = wordsToAnimate[0].length;
 		var growDur = grow(mult);
 		var shrinkDur = shrink(mult);
-		var delayDur = delay(mult);
+		var delayDur = delay();
 				
 		//console.log(grew + '\t' + shrunk + '\t' + deelay);
 		
@@ -60,6 +60,7 @@ function animate(wordsToAnimate, callback) {
 }
 
 function doIt(current, theWord, growDur, shrinkDur, delay, callback) {
+	console.log(delay);
 	// Split data into array of words
 	var wordsies = theWord.split(' ');
 	var numWords = wordsies.length;
@@ -85,7 +86,8 @@ function doIt(current, theWord, growDur, shrinkDur, delay, callback) {
 	
 	
 	// Figure out max font-size for this phrase
-	var max = parseInt(Math.random()*document.width) + 100;//resizeText(wordDiv);
+	var mult = Math.random() < .1 ? 1 : .5;
+	var max = parseInt(Math.random()*document.width*mult);//resizeText(wordDiv);
 	wordDiv.empty();
 	wordDiv.css('font-size', 0);
 	
@@ -94,8 +96,8 @@ function doIt(current, theWord, growDur, shrinkDur, delay, callback) {
 	
 	// Move the starting point of the animation
 	wordDiv.css({
-		'left' : (Math.random()*width) - width/2,
-		'top'  : (Math.random()*height*.5),	
+		'left' : (Math.random()*(width-(width*.8))) + (width*.1),
+		'top'  : (Math.random()*(height-(height*.8))) + (height*.1),	
 		});
 	
 	//console.log(wordDiv);
