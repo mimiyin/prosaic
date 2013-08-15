@@ -11,24 +11,25 @@ var easingOpts = ['linear', 'swing', 'easeInQuad', 'easeOutQuad', 'easeInOutQuad
 var easingCount = easingOpts.length-1;
 
 function grow(numWords){
-		rgrow += Math.random()*10;
-		var dividend = 50*numWords;
-		var growth = dividend/Math.abs(Math.sin(Math.tan(rgrow)));
+		rgrow += Math.random();
+		var dividend = 100*numWords;
+		var growth = dividend/(Math.sin(Math.tan(rgrow)) + 1.1);
 		//if(growth > rmax) growth = rmax;
 		return growth;
 	}
 
 function shrink(numWords) {
-		rshrink += Math.random()*10;
-		var dividend = 50*numWords;
-		var diminution = dividend/Math.abs(Math.cos(Math.tan(rshrink)));
+		rshrink += Math.random();
+		var dividend = 100*numWords;
+		var diminution = dividend/(Math.cos(Math.tan(rshrink))+1.1);
 		//if(diminution > rmax) diminution = rmax;
 		return diminution;	
 	}
 	
 function delay(){
 		rdelay += Math.random();
-		return Math.abs(Math.cos(rdelay))*100;
+		var amp = 500;
+		return (Math.cos(rdelay)*amp)+amp;
 	}
 	  
 function animate(wordsToAnimate, callback) {
@@ -48,7 +49,7 @@ function animate(wordsToAnimate, callback) {
 		// How many words to animate at the same time?
 		var animateMany = (Math.random()*wordsToAnimate.length)/((Math.random()*2+1));
 		$.each(wordsToAnimate, function(w, word){
-			console.log("ANIMATE MANY: " + w + "\t" + animateMany.toString());
+			//console.log("ANIMATE MANY: " + w + "\t" + animateMany.toString());
 			if(w < animateMany-1) doIt(0, word, growDur, shrinkDur, delayDur);
 			else if(w < animateMany) doIt(2, word, growDur, shrinkDur, delayDur, callback);
 			});
@@ -60,7 +61,9 @@ function animate(wordsToAnimate, callback) {
 }
 
 function doIt(current, theWord, growDur, shrinkDur, delay, callback) {
-	console.log(delay);
+	console.log("GROW: " + growDur);
+	console.log("SHRINK: " + shrinkDur);
+	console.log("DELAY: " + delay);
 	// Split data into array of words
 	var wordsies = theWord.split(' ');
 	var numWords = wordsies.length;
@@ -94,11 +97,15 @@ function doIt(current, theWord, growDur, shrinkDur, delay, callback) {
 	var width = $(window).width();
 	var height = $(window).height();
 	
+	
+	
 	// Move the starting point of the animation
 	wordDiv.css({
-		'left' : (Math.random()*(width-(width*.8))) + (width*.1),
-		'top'  : (Math.random()*(height-(height*.8))) + (height*.1),	
+		'left' : (Math.random()*width*.5 + (width*.25)) - (wordDiv.width()/2),
+		'top'  : (Math.random()*height*.5 + (height*.25)) - (wordDiv.height()/2),	
 		});
+	
+	console.log(wordDiv.css("left"));
 	
 	//console.log(wordDiv);
 	
