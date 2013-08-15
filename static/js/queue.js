@@ -38,7 +38,7 @@ var queue = {
 	},
 	
 	getData: function(name) {
-		queue.name = name;
+		queue.name = name || queue.name;
 		//console.log("PreQ: " + queue.preQ.toString());		
 		
 		//console.log(queue.words);

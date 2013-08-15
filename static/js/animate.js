@@ -102,7 +102,7 @@ function doIt(current, theWord, growDur, shrinkDur, delay, callback) {
 	// Move the starting point of the animation
 	wordDiv.css({
 		'left' : (Math.random()*width*.5 + (width*.25)) - (wordDiv.width()/2),
-		'top'  : (Math.random()*height*.5 + (height*.25)) - (wordDiv.height()/2),	
+		'top'  : (Math.random()*height*.5) - (wordDiv.height()/2),	
 		});
 	
 	console.log(wordDiv.css("left"));
