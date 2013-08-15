@@ -96,13 +96,12 @@ a:visited {
 }
 
 #label {
-	-ms-transform:rotate(-90deg);
-	-webkit-transform:rotate(-90deg);
-	-moz-transform:rotate(-90deg);
+	-ms-transform:rotate(-90deg) translate(-65%,-460%);
+	-webkit-transform:rotate(-90deg) translate(-65%,-460%);
+	-moz-transform:rotate(-90deg) translate(-65%,-460%);
 	
 	position: relative;
-	right: 72px;
-	top: 50px;
+	float: left;
 }
 
 .on,.off {
