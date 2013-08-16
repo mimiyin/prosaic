@@ -8,10 +8,12 @@ The first time I
 The first time you
 The first thing you told me
 The first thing I noticed was
-The only thing I noticed
+The only thing
 This reminds me
 This makes me
 I remember
+Do you remember
+Don't you remember
 The feeling
 The feeling of
 The smell of
@@ -27,17 +29,24 @@ The feel
 Make me feel
 Make me
 You make me
-You make me feel
+You make me feel like
 What you make me feel
 What you say you feel
 What makes you say
 What makes you do
 What makes you think
+Why
+How
 Did you think
 Do you think
+What were you thinking
+Don't you think
 Won't you think
+What was I thinking
 Won't they think
 Do I think
+How does this make you feel
+What I think is
 Do you agree
 Do you know
 Do you know for certain
@@ -49,23 +58,30 @@ I don't agree because
 I don't know because
 I agree because
 I know because
+Because
+The reason is
 I know
 I am
+I never
 You are
 We are
 They are
+You shouldn't
 They aren't
+You wouldn't
 They will be
 They won't be
 They can be
 They can't be
 Can you give me
 Can't you give me
+Can you explain
+Won't you explain
 Won't you give me
 Will you give me
 Can you forgive me
-Can you forget me
 Can you forget
+Can you forget me
 I can't forget
 Can I forget
 Can I take back
@@ -75,8 +91,16 @@ Will you remember
 Will you
 You will
 Will you take back
+You will go back
 Will you give back
+Won't you go back
 I won't
+I wonder
+I sometimes
+I wish
+I hope
+I want
+I wanted
 But maybe
 But maybe not
 Maybe true
