@@ -91,10 +91,16 @@ var queue = {
 		//console.log(queue.w);
  		if (queue.w >= queue.words.length) {
  			queue.w = 0;
- 			console.log("NEED MORE DATA: " + queue.w.toString());
-			console.log("THE END");
- 			setTimeout(function() { queue.getData() }, 5000);
+ 			if(queue.name) {
+	 			console.log("NO NEED FOR MORE DATA!!!");
+ 				queue.cueAnimation();
  			}
+ 			else {
+	 			console.log("NEED MORE DATA: " + queue.w.toString());
+				console.log("THE END");
+	 			setTimeout(function() { queue.getData() }, 5000);
+ 			}
+ 		}
 		else if(!hood) {
 			console.log("ANIMATING " + queue.words.length +" WORDS");
 			var maxWords = queue.words.length;
