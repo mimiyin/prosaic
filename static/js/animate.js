@@ -3,7 +3,7 @@ var rgrow = 0,
 	rdelay = 0,
 	rmax = 10000;
 
-var easingOpts = ['linear', 'swing', 'easeInQuad', 'easeOutQuad', 'easeInOutQuad', 'easeInCubic', 'easeInOutCubic', 'easeInQuart', 'easeOutQuart',
+var easingOpts = ['linear', 'linear', 'linear', 'linear', 'linear', 'linear', 'linear', 'linear', 'linear', 'linear', 'linear', 'swing', 'easeInQuad', 'easeOutQuad', 'easeInOutQuad', 'easeInCubic', 'easeInOutCubic', 'easeInQuart', 'easeOutQuart',
                   'easeInOutQuart', 'easeInQuint', 'easeOutQuint', 'easeInOutQuint', 'easeInSine', 'easeOutSine', 'easeInOutSine', 'easeInExpo',
                   'easeOutExpo', 'easeInOutExpo', 'easeInCirc', 'easeOutCirc', 'easeInOutCirc', 'easeInElastic', 'easeOutElastic', 'easeInBack',
                   'easeInOutBack', 'easeInBounce', 'easeOutBounce', 'easeInOutBounce'];
