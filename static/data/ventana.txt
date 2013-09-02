@@ -6,7 +6,7 @@ When I hear
 I smell
 I smell something good
 I smell something bad
-I hear something
+I hear
 I hear you
 I can't hear you
 I feel you
@@ -21,14 +21,16 @@ I was the first
 I was the only one
 It was the first time
 It was the only time
-It was the first time
+It was the first and only time
 It was the first thing
 The first thing I noticed
 The first thing I saw
 The only thing I saw
-The only thing
+The only thing I remember
 That reminds me
 I have a memory of
+I can't remember
+I don't remember
 I remember
 Do you remember
 Don't you remember
@@ -45,14 +47,18 @@ The sounds of
 The sound
 The feel of
 The feel
-Make me feel
+It makes me feel
+You make me feel
 Make me
 You make me
-You make me feel like this
+You make me feel as if
+As if
 You made me do this
 I didn't do this
+I would never do this
 You did this
 You did this to yourself
+I did this to myself
 What makes you say that
 What makes you do that
 What makes you think that
@@ -62,6 +68,8 @@ Why not
 How so
 Why so
 Should
+Shouldn't
+Should you
 Should you be
 Shouldn't you be
 Won't you be
@@ -72,6 +80,7 @@ Did you think
 What were you thinking
 Don't you think
 Won't you think
+What would he think
 What was I thinking
 Won't they think
 Do you think
@@ -81,14 +90,17 @@ How does this make you feel
 How does this make you feel
 How does this make you feel
 What I think is
+Does anyone care what I think
 You agree
 Do you agree
 Don't you agree
 Do you know
+Do you now
 Don't you know
 Do you know for certain
 Do you know for sure
 Are you sure
+Are you absolutely certain
 I'm not sure
 I'm not sure if
 I don't know if
@@ -135,12 +147,17 @@ Will you remember
 Will you
 You will
 Will you take back
+Will you regret
+Do you regret
+I regret
+I'll never tell you
+I'll never say
 Will you go back
 You will go back
 Will you give back
 Why won't you go back
 Why won't you
-I won't
+I just won't
 I wonder
 I sometimes
 I wish
@@ -151,24 +168,28 @@ I want
 I want to
 I wanted to
 I wish I hadn't
-I regret
+I wish I had
 But maybe
 Maybe not
 Maybe true
 Maybe no true
 Maybe more
-Maybe less is more
+Maybe less
 Maybe no
 Maybe you can never
-Maybe you can't
+Maybe it was never
+It was never meant
+It had to be
+It must have been
 Can you say more
 Can you
 How can you
 How could you
 How do you
-How do you do
 Won't you say more
-Won't you say
+Won't you say less
+Don't say it
+I won't say it again
 Won't you stay
 For what
 So what

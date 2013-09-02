@@ -11,6 +11,13 @@
 {% block body %}
 
  <script type=text/javascript>	
+ 
+	setInterval(function(){
+ 		var hour = new Date().getHours();
+ 		if(hour >= 6 && hour <= 7)
+ 			location.reload();
+ 	}, 3600000);
+ 	
  	var crazy = true;
  	var hood = false;
 	queue.getData("ventana");

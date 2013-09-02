@@ -6,7 +6,7 @@ qUWhen I hear
 qUI smell
 qUI smell something good
 qUI smell something bad
-q	UI hear something
+q	UI hear
 q
 UI hear you
 qUI can't hear you
@@ -22,172 +22,194 @@ qUI was the first
 qUI was the only one
 qUIt was the first time
 qUIt was the only time
-qUIt was the first time
+qUIt was the first and only time
 qUIt was the first thing
 qUThe first thing I noticed
 qUThe first thing I saw
 qUThe only thing I saw
-qUThe only thing
+qUThe only thing I remember
 qUThat reminds me
 qUI have a memory of
-q UI remember
-q!UDo you remember
-q"UDon't you remember
-q#UHow could you forget
-q$UThe feeling
-q%UThe feeling of
-q&UThe smell of
-q'U
-The smell
-q(UThe color of
+q UI can't remember
+q!UI don't remember
+q"UI remember
+q#UDo you remember
+q$UDon't you remember
+q%UHow could you forget
+q&UThe feeling
+q'UThe feeling of
+q(UThe smell of
 q)U
-The color
-q*UThe taste of
+The smell
+q*UThe color of
 q+U
-The taste
-q,UThe sounds of
+The color
+q,UThe taste of
 q-U
+The taste
+q.UThe sounds of
+q/U
 The sound
-q.UThe feel of
-q/U	The feel
-q0UMake me feel
-q1UMake me
-q2UYou make me
-q3UYou make me feel like this
-q4UYou made me do this
-q5UI didn't do this
-q6UYou did this
-q7UYou did this to yourself
-q8UWhat makes you say that
-q9UWhat makes you do that
-q:UWhat makes you think that
-q;UWhy
-q<UHow
-q=UWhy not
-q>UHow so
-q?UWhy so
-q@UShould
-qAUShould you be
-qBUShouldn't you be
-qCUWon't you be
-qDU
+q0UThe feel of
+q1U	The feel
+q2UIt makes me feel
+q3UYou make me feel
+q4UMake me
+q5UYou make me
+q6UYou make me feel as if
+q7UAs if
+q8UYou made me do this
+q9UI didn't do this
+q:UI would never do this
+q;UYou did this
+q<UYou did this to yourself
+q=UI did this to myself
+q>UWhat makes you say that
+q?UWhat makes you do that
+q@UWhat makes you think that
+qAUWhy
+qBUHow
+qCUWhy not
+qDUHow so
+qEUWhy so
+qFUShould
+qGU
+Shouldn't
+qHUShould you
+qIUShould you be
+qJUShouldn't you be
+qKUWon't you be
+qLU
 Won't you
-qEUDo you
-qFUDo you think
-qGUDid you think
-qHUWhat were you thinking
-qIUDon't you think
-qJUWon't you think
-qKUWhat was I thinking
-qLUWon't they think
-qMUDo you think
-qNUHow does this make you feel
-qOUHow does this make you feel
-qPUHow does this make you feel
-qQUHow does this make you feel
-qRUHow does this make you feel
-qSUWhat I think is
-qTU
+qMUDo you
+qNUDo you think
+qOUDid you think
+qPUWhat were you thinking
+qQUDon't you think
+qRUWon't you think
+qSUWhat would he think
+qTUWhat was I thinking
+qUUWon't they think
+qVUDo you think
+qWUHow does this make you feel
+qXUHow does this make you feel
+qYUHow does this make you feel
+qZUHow does this make you feel
+q[UHow does this make you feel
+q\UWhat I think is
+q]UDoes anyone care what I think
+q^U
 You agree
-qUUDo you agree
-qVUDon't you agree
-qWUDo you know
-qXUDon't you know
-qYUDo you know for certain
-qZUDo you know for sure
-q[UAre you sure
-q\UI'm not sure
-q]UI'm not sure if
-q^UI don't know if
-q_UI agree
-q`UI don't agree
-qaUI don't know
-qbUI'll never know
-qcUYou'll never know
-qdUWhy
-qeUBecause
-qfUWhy
-qgUBecause
-qhUThe reason is
-qiUI know
-qjUI am
-qkUI never
-qlUYou are
-qmUWe are
-qnU	They are
-qoUYou shouldn't
-qpUThey aren't
-qqUYou wouldn't
-qrUThey will be
-qsUThey won't be
-qtUThey can be
-quUThey can't be
-qvUCan you give me a clue
-qwUCan't you give me
-qxUCan you explain
-qyUWon't you explain
-qzUWon't you give me
-q{UWill you give me
-q|UCan you forgive me
-q}UCan you forget me
-q~UCan you forget
-qUCan you forgive
-qÄUI can't forget
-qÅUI can't forgive
-qÇUCan you take back
-qÉUWill you take back
-qÑUDo you take back
-qÖUDo you remember
-qÜUWill you remember
-qáU	Will you
-qàU	You will
-qâUWill you take back
-qäUWill you go back
-qãUYou will go back
-qåUWill you give back
-qçUWhy won't you go back
-qéUWhy won't you
-qèUI won't
-qêU	I wonder
-qëUI sometimes
-qíUI wish
-qìUI hope
-qîUI fear
-qïU	I loathe
-qñUI want
-qóU
+q_UDo you agree
+q`UDon't you agree
+qaUDo you know
+qbUDo you now
+qcUDon't you know
+qdUDo you know for certain
+qeUDo you know for sure
+qfUAre you sure
+qgUAre you absolutely certain
+qhUI'm not sure
+qiUI'm not sure if
+qjUI don't know if
+qkUI agree
+qlUI don't agree
+qmUI don't know
+qnUI'll never know
+qoUYou'll never know
+qpUWhy
+qqUBecause
+qrUWhy
+qsUBecause
+qtUThe reason is
+quUI know
+qvUI am
+qwUI never
+qxUYou are
+qyUWe are
+qzU	They are
+q{UYou shouldn't
+q|UThey aren't
+q}UYou wouldn't
+q~UThey will be
+qUThey won't be
+qÄUThey can be
+qÅUThey can't be
+qÇUCan you give me a clue
+qÉUCan't you give me
+qÑUCan you explain
+qÖUWon't you explain
+qÜUWon't you give me
+qáUWill you give me
+qàUCan you forgive me
+qâUCan you forget me
+qäUCan you forget
+qãUCan you forgive
+qåUI can't forget
+qçUI can't forgive
+qéUCan you take back
+qèUWill you take back
+qêUDo you take back
+qëUDo you remember
+qíUWill you remember
+qìU	Will you
+qîU	You will
+qïUWill you take back
+qñUWill you regret
+qóUDo you regret
+qòU	I regret
+qôUI'll never tell you
+qöUI'll never say
+qõUWill you go back
+qúUYou will go back
+qùUWill you give back
+qûUWhy won't you go back
+qüUWhy won't you
+q†UI just won't
+q°U	I wonder
+q¢UI sometimes
+q£UI wish
+q§UI hope
+q•UI fear
+q¶U	I loathe
+qßUI want
+q®U
 I want to
-qòUI wanted to
-qôUI wish I hadn't
-qöU	I regret
-qõU
+q©UI wanted to
+q™UI wish I hadn't
+q´UI wish I had
+q¨U
 But maybe
-qúU
+q≠U
 Maybe not
-qùUMaybe true
-qûUMaybe no true
-qüUMaybe more
-q†UMaybe less is more
-q°U	Maybe no
-q¢UMaybe you can never
-q£UMaybe you can't
-q§UCan you say more
-q•UCan you
-q¶UHow can you
-qßUHow could you
-q®UHow do you
-q©UHow do you do
-q™UWon't you say more
-q´UWon't you say
-q¨UWon't you stay
-q≠U	For what
-qÆUSo what
-qØU	For what
-q∞U	Say what
-q±U	What for
-q≤UWhat do you think
-q≥UWhy do you think
-q¥U	Why do I
-qµUDo I
-q∂UOh do I
-q∑e.
+qÆUMaybe true
+qØUMaybe no true
+q∞UMaybe more
+q±UMaybe less
+q≤U	Maybe no
+q≥UMaybe you can never
+q¥UMaybe it was never
+qµUIt was never meant
+q∂UIt had to be
+q∑UIt must have been
+q∏UCan you say more
+qπUCan you
+q∫UHow can you
+qªUHow could you
+qºUHow do you
+qΩUWon't you say more
+qæUWon't you say less
+qøUDon't say it
+q¿UI won't say it again
+q¡UWon't you stay
+q¬U	For what
+q√USo what
+qƒU	For what
+q≈U	Say what
+q∆U	What for
+q«UWhat do you think
+q»UWhy do you think
+q…U	Why do I
+q UDo I
+qÀUOh do I
+qÃe.
