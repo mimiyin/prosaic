@@ -16,5 +16,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
      url(r'^$', RedirectView.as_view(url='/words/')), # Intercept the CMS page and redirect to welcome
      url(r'^admin/', include(admin.site.urls)), 
-     url(r'^words/', include('words.urls'))    
+     url(r'^words/', include('words.urls')),    
+     url(r'^ventana$', RedirectView.as_view(url='/words/ventana')), # Intercept the CMS page and redirect to welcome
 )
