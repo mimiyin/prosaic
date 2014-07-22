@@ -1,6 +1,3 @@
-import os
-PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
-
 # Django settings for Prosaic project.
 
 DEBUG = True
@@ -72,7 +69,6 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-                    
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -117,7 +113,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'prosaic.urls'
 
 TEMPLATE_DIRS = (
-    PROJECT_PATH + '/templates/'
+    '/home/capps/webapps/django_prosaic/prosaic/templates'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
