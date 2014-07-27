@@ -9,7 +9,7 @@ function scroll(current, wordsies, callback) {
 	
 		
 	// Figure out max font-size for this phrase
-	var max = .08 * $(window).width();
+	var max = 100 * 2/wordsies.length;
 	wordDiv.text(wordsies);
 	wordDiv.css('font-size', 0);
 	
@@ -31,18 +31,20 @@ function scroll(current, wordsies, callback) {
 	 * Set amount of time and velocity curve for text to shrink
 	 */
 	wordDiv.delay(delay).animate({
-		fontSize: max + 'px',
-		}, wordsies.length*20 + 500, function(){ 
+		fontSize: max + 'vw',
+		}, wordsies.length*Math.pow(2, .5)*20 + 250, function(){ 
 			var id = $(this).attr('id');
 			$("#count-for-" + id).remove();
 			callback();
-			$(this).animate({
-				bottom: '250px',
-				fontSize: 0,
-				opacity : 0,
-			}, 5000, function(){
-				$(this).remove();
-			});
+
+			$(this)
+				.animate({
+					bottom: '+=' + ($(this).height()*Math.log(.5)) + 'px',
+					fontSize: 0,
+					opacity : 0,
+				}, 5000, function(){
+					$(this).remove();
+				});
 		});
 	}
 
