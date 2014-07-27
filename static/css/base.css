@@ -8,6 +8,7 @@ html,body,div,span,img {
 		sans-serif;
 	font-size: 14px;
 	color: #f7f7f7;
+	box-sizing: content-box;
 }
 
 body {
@@ -73,35 +74,33 @@ a:visited {
 	z-index: 100;
 	opacity: .875;
 	padding: 10px 0px 10px 25px;
-	background-color: #333;
+	background: rgba(255,255,255,.125);
 	text-align: right;
 	font-size: 1.15em;
 	font-weight: bold;
 	cursor: pointer;
 }
 
-#scatter, #drill {
+.mode {
 	float : left;
 	position: relative;
 	z-index: 100;
 	top: 10px;
 	left: 30px;
+	background: rgba(255,255,255,.125);
+	margin-right: 1px;
+	padding: 5px 10px;
 	cursor: pointer;
-	background: rgba(255,255,255,.33);
-	padding: 5px;
-}
-
-#drill {
-	margin-right: 20px;
 }
 
 #label {
-	-ms-transform:rotate(-90deg) translate(-65%,-460%);
-	-webkit-transform:rotate(-90deg) translate(-65%,-460%);
-	-moz-transform:rotate(-90deg) translate(-65%,-460%);
+	transform:rotate(-90deg) translate(-60%,-460%);
+	-ms-transform:rotate(-90deg) translate(-60%,-460%);
+	-webkit-transform:rotate(-90deg) translate(-60%,-460%);
 	
 	position: relative;
 	float: left;
+	cursor: pointer;
 }
 
 .on,.off {

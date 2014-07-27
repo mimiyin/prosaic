@@ -12,19 +12,20 @@
 
 {% block body %}
 
-<div id=drill>START AT THE BEGINNING</div>
-<div id=scatter>SCATTER</a></div>
+<div id='drill' class='mode'>DRILL</div>
+<div id='scatter' class='mode'>SCATTER</a></div>
+<div id='ventana' class='mode' file='ventana'>WHEN I SEE</a></div>
 
-<div id=controls>
-	<div id=label>peek under the hood</div>
+<div id='controls'>
+	<div id='label'>PEEK UNDER THE HOOD</div>
 	<!-- <div id=about><a href=http://itp.nyu.edu/~yy600/blog/prosaic/ target=_blank>about</a></div> -->
-	<div id=0 class='control off'>repeat</div>
-	<div id=1 class='control off'>remix</div>
-	<div id=2 class='control off'>stutter</div>
-	<div id=3 class='control off'>elide</div>
-	<div id=4 class='control off'>synonymize</div>
-	<div id=5 class='control off'>alliterate</div>
-	<div id=6 class='control off'>rhyme</div>
+	<div id='0' class='control off'>repeat</div>
+	<div id='1' class='control off'>remix</div>
+	<div id='2' class='control off'>stutter</div>
+	<div id='3' class='control off'>elide</div>
+	<div id='4' class='control off'>synonymize</div>
+	<div id='5' class='control off'>alliterate</div>
+	<div id='6' class='control off'>rhyme</div>
 </div>
  <script type=text/javascript>
 
@@ -52,22 +53,20 @@
 			});
 	}
 	
-	$("#controls").click(function(){
+	$("#controls").click(function(e){
 		//if(open) hood = false;
 		//else hood = true;
 		if(!open) openControls($(this));
 		else closeControls($(this));
 	});
 	
-	$(".control").each(function(i){
-		$(this).click(function(e){
-			e.stopPropagation();
-			$("#controls div").removeClass('on');			
-			$(this).toggleClass('on');
-			
-			sendControls();
-			});
-		});
+	$(".control").click(function(e){
+		e.stopPropagation();
+		$(this).siblings().removeClass('on');			
+		$(this).toggleClass('on');
+		fadeOutCounter();
+		sendControls();
+	});
 	
 	function openControls(elem){
 		//console.log("OPEN SESAME");
@@ -123,10 +122,18 @@
 		//queueWrapper('controls', function(){ console.log("SENT!")}, controls);
 	}
 	
-	function initHood(subQ, preQ, atW) {
+	function initHood(subQ, preQ, atW, file) {
 		queue.reInit(subQ, preQ, atW);
-		queue.getData();
+		queue.getData(file || null);
 	}
+
+	function fadeOutCounter() {
+		setTimeout(function(){
+			$(".count").fadeOut("slow");
+			$(".ywp-container").fadeOut("slow");
+		}, 500);
+	}
+
 	queue.getData();
 		
 	// Get reading
@@ -145,25 +152,15 @@
 	});
 	
 	// Music
-	$("#scatter").click(function(){
+	$("#scatter, #ventana").click(function(){
 		reading = false;
 		crazy = true;
 		
-		if(crazy) {
-			//console.log("CRAZY");
-			hood = false;
-			closeControls($("#controls"));
-			initHood(-1, -1);
-		}
-		else {
-			//console.log("NOT CRAZY");
-			hood = true;
-		}
-
-	setTimeout(function(){
-		$(".count").fadeOut("slow");
-		$(".ywp-container").fadeOut("slow");
-		}, 500);
+		//console.log("CRAZY");
+		hood = false;
+		closeControls($("#controls"));
+		initHood(-1, -1, $(event.target).attr("file"));
+		fadeOutCounter();
 	});
 	
 </script>

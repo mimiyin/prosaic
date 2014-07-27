@@ -61,9 +61,9 @@ function animate(wordsToAnimate, callback) {
 }
 
 function doIt(current, theWord, growDur, shrinkDur, delay, callback) {
-	console.log("GROW: " + growDur);
-	console.log("SHRINK: " + shrinkDur);
-	console.log("DELAY: " + delay);
+	// console.log("GROW: " + growDur);
+	// console.log("SHRINK: " + shrinkDur);
+	// console.log("DELAY: " + delay);
 	// Split data into array of words
 	var wordsies = theWord.split(' ');
 	var numWords = wordsies.length;
@@ -89,8 +89,8 @@ function doIt(current, theWord, growDur, shrinkDur, delay, callback) {
 	
 	
 	// Figure out max font-size for this phrase
-	var mult = Math.random() < .1 ? 1 : .5;
-	var max = parseInt(Math.random()*document.width*mult);//resizeText(wordDiv);
+	var mult = Math.random() < .1 ? 100 : 50;
+	var max = parseInt(Math.random()*mult);//resizeText(wordDiv);
 	wordDiv.empty();
 	wordDiv.css('font-size', 0);
 	
@@ -104,9 +104,7 @@ function doIt(current, theWord, growDur, shrinkDur, delay, callback) {
 		'left' : (Math.random()*width*.5 + (width*.25)) - (wordDiv.width()/2),
 		'top'  : (Math.random()*height*.5) - (wordDiv.height()/2),	
 		});
-	
-	console.log(wordDiv.css("left"));
-	
+		
 	//console.log(wordDiv);
 	
 	// Calculate rate at which words change during animation
@@ -121,7 +119,7 @@ function doIt(current, theWord, growDur, shrinkDur, delay, callback) {
 	 */
 	wordDiv.delay(delay).animate(
 		{
-		fontSize: max + 'px',
+		fontSize: max + 'vw',
 			},
 		{
 	    duration: growDur,

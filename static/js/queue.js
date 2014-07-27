@@ -45,6 +45,7 @@ var queue = {
 		if (queue.q_idx > 9) queue.q_idx = 0;
 		
 		queueWrapper('queue', function(data){
+			console.log(data);
 			queue.words = data.words;
 
 			// Cue Animation for "Testing 1,2,3"
