@@ -37,7 +37,7 @@ function scroll(current, wordsies, callback) {
 			$("#count-for-" + id).remove();
 			callback();
 			$(this).animate({
-				//top: -100,
+				bottom: '250px',
 				fontSize: 0,
 				opacity : 0,
 			}, 5000, function(){

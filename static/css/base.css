@@ -61,7 +61,7 @@ a:visited {
 	text-align : center;
 	font-size: 5em;
 	position: fixed;
-	bottom: 5%;
+	bottom: 50px;
 	color: #fff;
 	width: 100%;
 	pointer-events: none;
