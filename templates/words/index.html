@@ -122,8 +122,8 @@
 		//queueWrapper('controls', function(){ console.log("SENT!")}, controls);
 	}
 	
-	function initHood(subQ, preQ, atW, file) {
-		queue.reInit(subQ, preQ, atW);
+	function initHood(subQ, preQ, file) {
+		queue.reInit(subQ, preQ);
 		queue.getData(file || null);
 	}
 

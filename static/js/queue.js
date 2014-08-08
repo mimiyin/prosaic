@@ -47,6 +47,27 @@ var queue = {
 		queueWrapper('queue', function(data){
 			console.log(data);
 			queue.words = data.words;
+			console.log(queue.words[0]);
+
+			if(new RegExp('up').test(queue.words[0]) && !crazy) {
+				queue.words.splice(0,0,'');
+				queue.words.splice(0, 0,'go');
+				for(var i= 0; i < 7; i++) {
+					queue.words.splice(0,0,'');
+				}
+				for(var i= 0; i < 15; i++) {
+					var text = Math.random() > .5 ? 'ready' : 'get set';
+					queue.words.splice(0, 0, text);
+				}
+
+				for(var i= 0; i < 20; i++) {
+					queue.words.splice(0,0,'');
+				}
+
+				$("<div>").appendTo("body").addClass("word").text("[ Read me. ]").hide().fadeIn(5000, function(){
+					$(this).fadeOut(5000);
+				})
+			}
 
 			// Cue Animation for "Testing 1,2,3"
 			if(data.bookmark < 0) {
