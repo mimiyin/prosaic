@@ -60,11 +60,11 @@ var queue = {
 					queue.words.splice(0, 0, text);
 				}
 
-				for(var i= 0; i < 20; i++) {
+				for(var i= 0; i < 40; i++) {
 					queue.words.splice(0,0,'');
 				}
 
-				$("<div>").appendTo("body").addClass("word").text("[ Read me. ]").hide().fadeIn(5000, function(){
+				$("<div>").appendTo("body").addClass("word").text("[ Read me. ]").hide().fadeIn(15000, function(){
 					$(this).fadeOut(5000);
 				})
 			}
